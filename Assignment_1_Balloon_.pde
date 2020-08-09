@@ -6,35 +6,30 @@ float position_x = 200, position_y = 400, radius = 50, line_length = 100, red, g
 boolean Change_position = true;
 
 //declare like a variable (Type variable_name)
-Balloon b1;
+Balloon b1, b2, b3, b4;
 
 void setup(){
   background(255);
   size(800, 496);
-  
-  //Declare and construct two objects b1 from the class Balloon 
   b1 = new Balloon();
+  b2 = new Balloon(60, 40, 50, 110);
+  b3 = new Balloon(80);
+  b4 = new Balloon(100, 100);
 }
 
 void draw(){
   background(255);
-  
-  //use Class Balloon method
   b1.build();
-  
-  /*if (Change_position == true){
-    Floating();
-  }*/
+  b2.build();
+  b3.build();
+  b4.build();
+  if (Change_position == true){
+    b1.Floating();
+    b2.Floating();
+    b3.Floating();
+    b4.Floating();
+  }
 }
-
-/*void Floating(){
-  if ((position_y + (radius*0.5) + line_length) < 0){
-    position_y = height + (radius*0.5);
-  }
-  else{
-    position_y -= 1.0;
-  }
-}*/
 
 void mouseClicked(){
   if(Change_position == true){
